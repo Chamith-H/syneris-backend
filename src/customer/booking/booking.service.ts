@@ -79,7 +79,8 @@ export class BookingService {
     }
 
     return {
-      message: 'Send successfully',
+      message:
+        'Thank you for scheduling your appointment! A confirmation email has been sent to you with the details. We look forward to seeing you!',
     };
   }
 }
