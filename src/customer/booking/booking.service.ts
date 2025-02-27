@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { AppointmentDto } from './dto/appointment.dto';
 import * as ics from 'ics';
-import { SmtpService } from 'src/shared/smtp.service';
+import { SmtpService } from '../../shared/smtp.service';
 import * as momentTz from 'moment-timezone';
-import { AppointmentTemplate } from 'src/templates/appointment.template';
+import { AppointmentTemplate } from '../../templates/appointment.template';
 import * as cheerio from 'cheerio';
 
 @Injectable()
