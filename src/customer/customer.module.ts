@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ContactService } from './contact/contact.service';
 import { ContactController } from './contact/contact.controller';
-import { SmtpService } from 'src/shared/mail.service';
+import { SmtpService } from 'src/shared/smtp.service';
 import { ContactUsTemplate } from 'src/templates/contact-us.template';
 import { BookingService } from './booking/booking.service';
 import { BookingController } from './booking/booking.controller';

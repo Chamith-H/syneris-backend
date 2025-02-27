@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { ContactUsDto } from './dto/contact-us.dto';
-import { SmtpService } from 'src/shared/mail.service';
+import { SmtpService } from 'src/shared/smtp.service';
 import * as cheerio from 'cheerio';
 import { ContactUsTemplate } from 'src/templates/contact-us.template';
 

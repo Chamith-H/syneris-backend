@@ -1,5 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
+require('dotenv').config();
 
 @Injectable()
 export class SmtpService {
