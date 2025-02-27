@@ -35,6 +35,9 @@ export class ContactService {
     const tempString2 = await this.contactTemplate.contactReply(
       dto.name,
       dto.email,
+      dto.company,
+      dto.country,
+      dto.phone,
       dto.message,
     );
 

@@ -1,4 +1,4 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class AppointmentDto {
   @IsNotEmpty()
@@ -16,6 +16,15 @@ export class AppointmentDto {
   @IsNotEmpty()
   email: string;
 
-  @IsNotEmpty()
+  @IsOptional()
+  message: string;
+
+  @IsOptional()
   phone: string;
+
+  @IsOptional()
+  country: string;
+
+  @IsNotEmpty()
+  company: string;
 }

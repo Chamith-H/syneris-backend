@@ -12,13 +12,23 @@ export class ContactUsTemplate {
     return emailBody;
   }
 
-  async contactReply(name: string, email: string, message: string) {
+  async contactReply(
+    name: string,
+    email: string,
+    company: string,
+    country: string,
+    phone: string,
+    message: string,
+  ) {
     const emailBody = `<div>
         <h3>New message received from the contact form</h3>
         <p style="margin-bottom: 10px;">  </p>
 
         <p><strong>Name : </strong>${name}</p>
         <p><strong>Email : </strong>${email}</p>
+        <p><strong>Company : </strong>${company}</p>
+        <p><strong>Country : </strong>${country}</p>
+        <p><strong>Phone Number : </strong>${phone}</p>
         <p><strong>Message : </strong>${message}</p>
 
         <p style="margin-bottom: 10px;">  </p>

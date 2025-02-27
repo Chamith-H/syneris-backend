@@ -78,6 +78,37 @@ export class BookingService {
       );
     }
 
+    const tempString2 = await this.appointmentTemplate.appointmentReply(
+      dto.name,
+      dto.email,
+      dto.company,
+      dto.country,
+      dto.phone,
+      dto.message,
+      dto.bookedDate,
+      dto.bookedTime,
+      dto.timeZone,
+    );
+
+    const $2 = cheerio.load(tempString2);
+
+    const modifiedHtml2 = $2.html();
+
+    const emailData2 = {
+      receiver: 'akila@syneris.solutions',
+      heading: 'New Appointment Booking',
+      template: modifiedHtml2,
+      error: 'Sorry, cannot send request to your email!',
+    };
+
+    const mailStatus2 = await this.smtpService.sendEmail(emailData2);
+
+    if (!mailStatus2) {
+      throw new BadRequestException(
+        'Sorry, cannot send request to your email!',
+      );
+    }
+
     return {
       message:
         'Thank you for scheduling your appointment! A confirmation email has been sent to you with the details. We look forward to seeing you!',
