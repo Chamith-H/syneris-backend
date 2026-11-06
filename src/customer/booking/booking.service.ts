@@ -20,6 +20,12 @@ export class BookingService {
       dto.timeZone,
     );
 
+    if (!momentTz.tz.zone(dto.timeZone) || !startMoment.isValid()) {
+      throw new BadRequestException(
+        'Invalid appointment date, time, or time zone.',
+      );
+    }
+
     const endMoment = startMoment.clone().add(30, 'minutes');
 
     const event: ics.EventAttributes = {

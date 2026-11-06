@@ -32,6 +32,22 @@
 $ npm install
 ```
 
+## Protecting public forms
+
+Both contact forms and appointment bookings require an hCaptcha challenge that
+is verified by the backend before any email is sent. Configure a matching
+hCaptcha site key and secret key in the deployment environments:
+
+- Frontend: `VITE_HCAPTCHA_SITE_KEY` (public site key)
+- Backend: `HCAPTCHA_SECRET_KEY` (private secret; never expose it to the frontend)
+
+The frontend example is in `../syneris-frontend/.env.example`; the backend
+example is in `.env.example`. The backend also rejects filled honeypot fields,
+limits each client IP to five attempts per 15-minute window per running
+instance, and validates form input. The in-memory limit is a supplementary
+measure and is not shared across serverless instances; use a shared rate-limit
+store or provider firewall for distributed enforcement.
+
 ## Compile and run the project
 
 ```bash

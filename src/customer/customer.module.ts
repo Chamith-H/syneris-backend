@@ -6,6 +6,8 @@ import { ContactUsTemplate } from 'src/templates/contact-us.template';
 import { BookingService } from './booking/booking.service';
 import { BookingController } from './booking/booking.controller';
 import { AppointmentTemplate } from 'src/templates/appointment.template';
+import { FormSpamProtectionService } from 'src/shared/form-spam-protection.service';
+import { FormSubmissionGuard } from 'src/shared/form-submission.guard';
 
 @Module({
   providers: [
@@ -14,6 +16,8 @@ import { AppointmentTemplate } from 'src/templates/appointment.template';
     ContactUsTemplate,
     BookingService,
     AppointmentTemplate,
+    FormSpamProtectionService,
+    FormSubmissionGuard,
   ],
   controllers: [ContactController, BookingController],
 })
